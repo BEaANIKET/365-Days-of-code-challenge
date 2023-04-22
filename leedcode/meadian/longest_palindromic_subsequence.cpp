@@ -1,5 +1,4 @@
 
-if this helpful then please upvote me
 class Solution {
 public:
    int solvetab(string a,string b){
