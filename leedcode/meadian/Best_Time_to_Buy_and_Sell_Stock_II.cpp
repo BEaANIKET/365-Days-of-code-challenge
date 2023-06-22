@@ -26,7 +26,8 @@ int solvemem(vector<int>&prices,int buy,int index,vector<vector<int>>&dp){
         return 0;
     }
     if(dp[index][buy]!=-1)
-    return dp[index][buy];
+         return dp[index][buy];
+
     int profit=0;
     if(buy){
         int buykro=-prices[index]+solve(prices,0,index+1,dp);
