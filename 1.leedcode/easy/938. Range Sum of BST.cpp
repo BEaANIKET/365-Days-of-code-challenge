@@ -12,23 +12,26 @@
 class Solution {
 public:
 
-    void solve(TreeNode* root,vector<int>& ans){
+    int sum = 0;
+    void solve(TreeNode* root,int low,int high){
 
-        
-        if(root==NULL){
+        if(root == NULL){
             return ;
         }
 
-        solve(root->left,ans);
-        ans.push_back(root->val);
-        solve(root->right,ans);
+        solve(root -> left , low ,high );
+
+        if(root->val >= low && root->val <= high ){
+            sum += root->val;
+        }
+
+        solve(root -> right , low , high );
+
+        return ;
 
     }
-    vector<int> inorderTraversal(TreeNode* root) {
-        
-        vector<int>ans;
-        solve(root,ans);
-        return ans;
-        
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        inorder(root,low,high);
+        return sum ;
     }
 };
