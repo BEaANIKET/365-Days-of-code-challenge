@@ -1,0 +1,29 @@
+class Solution {
+public:
+    string reversePrefix(string word, char ch) {
+        
+        int j = 0;
+        while( j < word.length() && word[j] != ch){
+            j++;
+        }
+
+        cout<<"j : " <<j<<endl;
+
+        if( j == word.length() ){
+            return word;
+        }
+
+        int i = 0;
+        
+        while( i <= j){
+            int temp = word[i];
+            word[i] = word[j];
+            word[j] = temp;
+            i++;
+            j--;
+        }
+        
+
+        return word;
+    }
+};
